@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image/bg.png);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+
+.logo img {
+    height: 100px;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxes {
+    width: 900px;
+    height: 500px;
+    /* background-color: rgb(196, 150, 192); */
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.box {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: rgba(143, 227, 255, 0.596);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+/* .number {
+    width: 105px;
+    height: 105px;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    border-radius: 10%;
+    box-shadow: 0px 0px 5px 2px rgba(0,159,184,1);
+
+} */
+
+/* .outernumber {
+    width: 105px;
+    height: 105px;
+    /* background-color: rgb(223, 28, 28); */
+    /* padding: 10px;
+} */
+
+.box button {
+    width: 105px;
+    height: 105px;
+    background-image: url(image/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+    font-size: 80px;
+    color:transparent;
+    /* transition: all 1s; */
+}
+
+.firstext {
+    font-size: 80px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-family: fantasy;
+}
+
+.timeup {
+    font-size: 80px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-family: fantasy;
+}
+.scoreteks {
+    font-size: 80px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-family: fantasy;
+    color: red;
+}
+
+.score img, .time img{
+    width: 100px;
+}
+.score, .time {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scorevalue , .timevalue {
+    text-align: center;
+    width: 100px;
+    /* background-color: yellow; */
+    width: 100%;
+    margin-top: 20px;
+    font-size: 50px;
+    color: white;
+}
+
+.start {
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+#restart {
+    display: none;
+}

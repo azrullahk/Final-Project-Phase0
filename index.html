@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Matching Image</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- logo -->
+        <div class="logo">
+            <img src="image/logo.png" alt="Matching Number">
+        </div>
+        <!-- main -->
+        <div class="boxes">
+
+            <!-- left panel -->
+            <div class="left">
+                <div class="score">
+                    <img src="image/score.png.png" alt="">
+                </div>
+                <div class="scorevalue" >
+                    <p id="scorevalue"></p> 
+                </div>
+                <div class="start">
+                    <button id="start" class="start" onclick="start()">
+                        <p>START</p>
+                    </button>
+                    <button id="restart" class="start" onclick="restart()">
+                        <p>RESTART</p>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- content -->
+            <div class="box" id="box">
+                <p class='firstext'>click on start button to play the game</p>
+            </div>
+            <!-- rigth panel -->
+            <div  class="rigth">
+                <div class="time">
+                    <img src="image/time.png" alt="">
+                </div>
+                <div class="timevalue" >
+                    <p id="timevalue"></p>
+                </div>
+                <div id="database"></div>
+            </div>
+        </div>
+        <!-- end main -->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

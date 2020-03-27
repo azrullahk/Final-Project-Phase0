@@ -1,0 +1,42 @@
+<html>
+<style>
+.loader{
+  border:16px solid #f3f3f3;
+  border-radius:50%;
+  border-top: 16px solid #3498db;
+  width :120px;
+  height :120px;
+  -webkit-animation : spin 2s linear infinite;
+  animation : spin 2s linear infinite;
+}
+
+</style>
+​
+<script>
+function countdown(){
+​
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished";
+    document.getElementById("myDiv").style.display = "none";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+    document.getElementById("myDiv").style.display = "block";
+​
+  }
+  timeleft -= 1;
+}, 1000); 
+​
+}
+​
+</script>
+  </head>
+​
+  <body>
+    <div id="countdown" ></div>
+    <div id="myDiv" class="loader" style="display:none"></div>
+    <button id="clickme" onclick="countdown()">Start</button>
+  </body>
+</html>
