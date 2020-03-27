@@ -1,7 +1,7 @@
 
 
 let score = 0;
-let time =1000;
+let time =25;
 let num=8;
 let array =[];
 
