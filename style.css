@@ -82,7 +82,7 @@ body {
     text-align: center;
     justify-content: center;
     color: white;
-    font-family: fantasy;
+    /* font-family: fantasy; */
 }
 
 .timeup {
@@ -97,7 +97,7 @@ body {
     text-align: center;
     justify-content: center;
     color: white;
-    font-family: fantasy;
+    /* font-family: fantasy; */
     color: red;
 }
 
