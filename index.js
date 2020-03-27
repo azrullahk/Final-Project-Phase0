@@ -1,7 +1,7 @@
 
 
 let score = 0;
-let time =25;
+let time =1000;
 let num=8;
 let array =[];
 
@@ -25,7 +25,11 @@ function start() {
             let value = randomNumber(num);
             let index = id;
             var boxs = document.createElement('button');
-            boxs.innerHTML = `<p id='${id}' class='angka' onclick="getNumber${id}()"> ${value} <p/>`;
+            // boxs.setAttribute('disable','disable');
+            boxs.setAttribute(`id`,`${id}`);
+            boxs.setAttribute(`onclick`,`getNumber(${id})`);
+            boxs.setAttribute(`class`,`angka`);
+            boxs.innerHTML = `${value}`;
             document.getElementById("box").appendChild(boxs);
         }
 
@@ -53,6 +57,7 @@ function rubahWarna (angka) {
     angka.style.fontSize= '80px';
     angka.style.color='black';
     angka.style.transition='all 0.5s';
+    angka.disable=true
 }
 
 function reset (angka) {
@@ -138,21 +143,17 @@ function compare (pertama,kedua,angka,Ide) {
     }
 }
 
-
-
 let pertama=0;
 let kedua=0;
 let Ide=0;
-let end = false;
 
-
-function getNumber1(){
-    let angka = document.getElementById(`1`)
+function getNumber(idgen){
+    let angka = document.getElementById(`${idgen}`)
     if (pertama==0 || kedua==0 || Ide==0) {
         rubahWarna(angka);
     if (pertama==0) {
         pertama=angka.innerHTML;
-        Ide=`1`;
+        Ide=`${idgen}`;
     } else if (pertama!=0) {
         kedua=angka.innerHTML;
         compare(pertama,kedua,angka,Ide);
@@ -163,238 +164,239 @@ function getNumber1(){
     }
 }
 
-function getNumber2(){
-    let angka = document.getElementById(`2`)
-    if (pertama==0 || kedua==0 || Ide==0) {
-        rubahWarna(angka);
-        if (pertama==0) {
-            pertama=angka.innerHTML;
-            Ide=`2`;
-        } else if (pertama!=0) {
-            kedua=angka.innerHTML;
-            compare(pertama,kedua,angka,Ide,end,score);
-            Ide=0;
-            pertama=0;
-            kedua=0;
-        }
-    }
-}
-function getNumber3(){
-    let angka = document.getElementById(`3`)
-        if (pertama==0 || kedua==0 || Ide==0) {
-            rubahWarna(angka);
-            if (pertama==0) {
-                pertama=angka.innerHTML;
-                Ide=`3`;
-            } else if (pertama!=0) {
-                kedua=angka.innerHTML;
-                compare(pertama,kedua,angka,Ide,end);
-                Ide=0;
-                pertama=0;
-                kedua=0;
-            } 
-        }
-    }
+// function tidak di gunakan =================
+// function getNumber2(){
+//     let angka = document.getElementById(`2`)
+//     if (pertama==0 || kedua==0 || Ide==0) {
+//         rubahWarna(angka);
+//         if (pertama==0) {
+//             pertama=angka.innerHTML;
+//             Ide=`2`;
+//         } else if (pertama!=0) {
+//             kedua=angka.innerHTML;
+//             compare(pertama,kedua,angka,Ide,end);
+//             Ide=0;
+//             pertama=0;
+//             kedua=0;
+//         }
+//     }
+// }
+// function getNumber3(){
+//     let angka = document.getElementById(`3`)
+//         if (pertama==0 || kedua==0 || Ide==0) {
+//             rubahWarna(angka);
+//             if (pertama==0) {
+//                 pertama=angka.innerHTML;
+//                 Ide=`3`;
+//             } else if (pertama!=0) {
+//                 kedua=angka.innerHTML;
+//                 compare(pertama,kedua,angka,Ide,end);
+//                 Ide=0;
+//                 pertama=0;
+//                 kedua=0;
+//             } 
+//         }
+//     }
 
-function getNumber4(){
-    let angka = document.getElementById(`4`)
-        if (pertama==0 || kedua==0 || Ide==0) {
-            rubahWarna(angka);
-            if (pertama==0) {
-                pertama=angka.innerHTML;
-                Ide=`4`;
-            } else if (pertama!=0) {
-                kedua=angka.innerHTML;
-                compare(pertama,kedua,angka,Ide,end);
-                Ide=0;
-                pertama=0;
-                kedua=0;
-            }
-        }
-    }
+// function getNumber4(){
+//     let angka = document.getElementById(`4`)
+//         if (pertama==0 || kedua==0 || Ide==0) {
+//             rubahWarna(angka);
+//             if (pertama==0) {
+//                 pertama=angka.innerHTML;
+//                 Ide=`4`;
+//             } else if (pertama!=0) {
+//                 kedua=angka.innerHTML;
+//                 compare(pertama,kedua,angka,Ide,end);
+//                 Ide=0;
+//                 pertama=0;
+//                 kedua=0;
+//             }
+//         }
+//     }
 
-function getNumber5(){
-    let angka = document.getElementById(`5`)
-    if (pertama==0 || kedua==0 || Ide==0) {
-        rubahWarna(angka);
-        if (pertama==0) {
-            pertama=angka.innerHTML;
-            Ide=`5`;
-        } else if (pertama!=0) {
-            kedua=angka.innerHTML;
-            compare(pertama,kedua,angka,Ide,end);
-            Ide=0;
-            pertama=0;
-            kedua=0;
-        }
-    }
-}
+// function getNumber5(){
+//     let angka = document.getElementById(`5`)
+//     if (pertama==0 || kedua==0 || Ide==0) {
+//         rubahWarna(angka);
+//         if (pertama==0) {
+//             pertama=angka.innerHTML;
+//             Ide=`5`;
+//         } else if (pertama!=0) {
+//             kedua=angka.innerHTML;
+//             compare(pertama,kedua,angka,Ide,end);
+//             Ide=0;
+//             pertama=0;
+//             kedua=0;
+//         }
+//     }
+// }
 
-function getNumber6(){
-    let angka = document.getElementById(`6`)
-    rubahWarna(angka);
-        if (pertama==0) {
-            pertama=angka.innerHTML;
-            Ide=`6`;
-        } else if (pertama!=0) {
-            kedua=angka.innerHTML;
-            compare(pertama,kedua,angka,Ide,end);
-            Ide=0;
-            pertama=0;
-            kedua=0;
-        }
-    }
+// function getNumber6(){
+//     let angka = document.getElementById(`6`)
+//     rubahWarna(angka);
+//         if (pertama==0) {
+//             pertama=angka.innerHTML;
+//             Ide=`6`;
+//         } else if (pertama!=0) {
+//             kedua=angka.innerHTML;
+//             compare(pertama,kedua,angka,Ide,end);
+//             Ide=0;
+//             pertama=0;
+//             kedua=0;
+//         }
+//     }
 
-function getNumber7(){
-    let angka = document.getElementById(`7`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`7`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
-    }
+// function getNumber7(){
+//     let angka = document.getElementById(`7`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`7`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
+//     }
 
-function getNumber8(){
-    let angka = document.getElementById(`8`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`8`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
+// function getNumber8(){
+//     let angka = document.getElementById(`8`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`8`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
 
-    }
+//     }
 
-function getNumber9(){
-    let angka = document.getElementById(`9`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`9`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
-    }
+// function getNumber9(){
+//     let angka = document.getElementById(`9`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`9`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
+//     }
 
-function getNumber10(){
-    let angka = document.getElementById(`10`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`10`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
+// function getNumber10(){
+//     let angka = document.getElementById(`10`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`10`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
  
-    }
+//     }
 
-function getNumber11(){
-    let angka = document.getElementById(`11`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`11`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
+// function getNumber11(){
+//     let angka = document.getElementById(`11`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`11`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
 
-    }
+//     }
 
-function getNumber12(){
-    let angka = document.getElementById(`12`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`12`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
-    }
+// function getNumber12(){
+//     let angka = document.getElementById(`12`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`12`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
+//     }
 
-function getNumber13(){
-    let angka = document.getElementById(`13`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`13`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
+// function getNumber13(){
+//     let angka = document.getElementById(`13`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`13`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
 
-    }
+//     }
 
-function getNumber14(){
-    let angka = document.getElementById(`14`)
-    rubahWarna(angka);
-    if (pertama==0) {
-        pertama=angka.innerHTML;
-        Ide=`14`;
-    } else if (pertama!=0) {
-        kedua=angka.innerHTML;
-        compare(pertama,kedua,angka,Ide,end);
-        Ide=0;
-        pertama=0;
-        kedua=0;
-    }
-    }
+// function getNumber14(){
+//     let angka = document.getElementById(`14`)
+//     rubahWarna(angka);
+//     if (pertama==0) {
+//         pertama=angka.innerHTML;
+//         Ide=`14`;
+//     } else if (pertama!=0) {
+//         kedua=angka.innerHTML;
+//         compare(pertama,kedua,angka,Ide,end);
+//         Ide=0;
+//         pertama=0;
+//         kedua=0;
+//     }
+//     }
 
-function getNumber15(){
-    let angka = document.getElementById(`15`)
-        rubahWarna(angka);
-        if (pertama==0) {
-            pertama=angka.innerHTML;
-            Ide=`15`;
-        } else if (pertama!=0) {
-            kedua=angka.innerHTML;
-            compare(pertama,kedua,angka,Ide,end);
-            Ide=0;
-            pertama=0;
-            kedua=0;
-        }
-    }
+// function getNumber15(){
+//     let angka = document.getElementById(`15`)
+//         rubahWarna(angka);
+//         if (pertama==0) {
+//             pertama=angka.innerHTML;
+//             Ide=`15`;
+//         } else if (pertama!=0) {
+//             kedua=angka.innerHTML;
+//             compare(pertama,kedua,angka,Ide,end);
+//             Ide=0;
+//             pertama=0;
+//             kedua=0;
+//         }
+//     }
 
-function getNumber16(){
-    let angka = document.getElementById(`16`)
-        rubahWarna(angka);
-        if (pertama==0) {
-            pertama=angka.innerHTML;
-            Ide=`16`;
-        } else if (pertama!=0) {
-            kedua=angka.innerHTML;
-            compare(pertama,kedua,angka,Ide,end);
-            Ide=0;
-            pertama=0;
-            kedua=0;
-        }
-    }
+// function getNumber16(){
+//     let angka = document.getElementById(`16`)
+//         rubahWarna(angka);
+//         if (pertama==0) {
+//             pertama=angka.innerHTML;
+//             Ide=`16`;
+//         } else if (pertama!=0) {
+//             kedua=angka.innerHTML;
+//             compare(pertama,kedua,angka,Ide,end);
+//             Ide=0;
+//             pertama=0;
+//             kedua=0;
+//         }
+//     }
