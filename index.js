@@ -72,7 +72,7 @@ function reset (angka) {
 }
 
 function disable (angka) {
-    angka.style.display='none'
+    // angka.style.display='none'
     angka.style.backgroundColor='cyan';
     angka.style.width= '105px';
     angka.style.height= '105px';
